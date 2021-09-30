@@ -5,7 +5,10 @@
   --main-link-color: #58a6ff;
   --main-button-color: #21262d;
   --focused-search-border: #1f6feb;
-  --focused-search-shadow: 0 0 3px #0c2d6b;
+  --focused-search-shadow: 0 0 0 3px #0c2d6b;
+  --focused-button-border: #8b949e;
+  --focused-button-shadow: 0 0 0 3px rgba(139, 148, 158, 0.3);
+  --hover-button-bg: #30363d;
 }
 
 *, *::after, *::before {
