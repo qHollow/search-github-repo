@@ -1,16 +1,23 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, useHistory } from 'react-router-dom';
+import './style.css';
 
 const NotFound: React.FC = () => {
 	const history = useHistory();
 	return (
-		<div>
+		<div className='not-found'>
 			<Helmet>
-				<title>Not found | Search GitHub repositories</title>
+				<title>Error | Search GitHub repositories</title>
 			</Helmet>
-			<h1>Sorry... Something was wrong</h1>
-			<button onClick={() => history.goBack()}>Back</button>
-			<Link to='/'>Home</Link>
+			<h1 className='not-found__title'>Sorry... Something was wrong</h1>
+			<div className='not-found__wrapper'>
+				<button onClick={history.goBack} className='not-found__button'>
+					Go back
+				</button>
+				<Link to='/' className='not-found__link'>
+					Home
+				</Link>
+			</div>
 		</div>
 	);
 };
