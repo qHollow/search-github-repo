@@ -5,6 +5,7 @@ import apolloClient from './api/createApolloClient';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
+import './assets/styles/index.css';
 
 ReactDOM.render(
 	<React.StrictMode>
