@@ -24,6 +24,7 @@ const Search = ({search, setSearch}: SearchProps) => {
 				name="search"
 				onChange={onChange}
 				value={search}
+				autoComplete="off"
 			/>
 			<button type='submit' className='search__button'>
 				Search

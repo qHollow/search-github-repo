@@ -1,0 +1,83 @@
+.card {
+  position: relative;
+  padding: 20px;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid var(--main-border-color);
+}
+
+.card__link {
+  font-size: 18px;
+  color: var(--main-link-color);
+  text-decoration: none;
+}
+
+.card__link:focus-visible {
+  outline: none;
+}
+
+.card__link:focus-visible::after {
+  box-shadow: var(--focused-button-shadow);
+  text-decoration: underline;
+  filter: brightness(1.1);
+}
+
+.card__link::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+}
+
+.card__link:active {
+  filter: brightness(0.9);
+}
+
+.card__description {
+  display: -webkit-box;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.card__wrapper--no-gap {
+  gap: 5px;
+}
+
+.card__star {
+  font-size: 12px;
+}
+
+.card__svg {
+  margin-right: 5px;
+  vertical-align: text-bottom;
+}
+
+.card__svg path {
+  fill: var(--main-text-color);
+}
+
+.card__color {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.card__language {
+  font-size: 12px;
+}

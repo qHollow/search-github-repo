@@ -1,6 +1,6 @@
 import './style.css';
 
-const Loader: React.FC = () => {
+const Loader = () => {
 	return (
 		<div className='lds-ring'>
 			<div></div>

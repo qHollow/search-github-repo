@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const InfoPage: React.FC = () => {
+const InfoPage = () => {
 	return (
 		<>
 			<Helmet>
