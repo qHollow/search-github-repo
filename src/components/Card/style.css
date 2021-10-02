@@ -1,5 +1,4 @@
 .card {
-  position: relative;
   padding: 20px;
   width: 55%;
   display: flex;
@@ -14,23 +13,10 @@
   text-decoration: none;
 }
 
-.card__link:focus-visible {
-  outline: none;
-}
-
-.card__link:focus-visible::after {
-  box-shadow: var(--focused-button-shadow);
+.card__link:hover,
+.card__link:focus{
   text-decoration: underline;
   filter: brightness(1.1);
-}
-
-.card__link::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  content: "";
 }
 
 .card__link:active {

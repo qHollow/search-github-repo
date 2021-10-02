@@ -11,7 +11,7 @@ const NotFound = () => {
 			</Helmet>
 			<h1 className='not-found__title'>Sorry... Something was wrong</h1>
 			<div className='not-found__wrapper'>
-				<button onClick={history.goBack} className='not-found__button'>
+				<button onClick={history.goBack} className='button button-lg'>
 					Go back
 				</button>
 				<Link to='/' className='not-found__link'>

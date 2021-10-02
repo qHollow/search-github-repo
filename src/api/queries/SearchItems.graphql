@@ -4,6 +4,7 @@ query SearchItems($query: String!, $cursor: String, $first: Int!) {
 			cursor
 			node {
 				... on Repository {
+					id
 					stargazerCount
 					name
 					description

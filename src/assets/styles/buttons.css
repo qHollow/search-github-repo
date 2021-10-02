@@ -1,0 +1,23 @@
+.button {
+  width: 80px;
+  padding: 6px;
+  margin-left: 10px;
+  background-color: var(--main-button-color);
+  border: 1px solid var(--main-border-color);
+  border-radius: 5px;
+  color: var(--main-text-color);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button-lg {
+  width: 100px;
+}
+
+.button:hover,
+.button:focus {
+  border-color: var(--focused-button-border);
+  box-shadow: var(--focused-button-shadow);
+  background-color: var(--hover-button-bg);
+}

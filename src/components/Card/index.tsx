@@ -9,13 +9,13 @@ const normalizeStargazer = (stars: number): string | number => {
 };
 
 const Card = ({ item }: any) => {
-	const { name, description, owner, primaryLanguage, stargazerCount } = item.node;
+	const { name, description, owner, primaryLanguage, stargazerCount, id } = item.node;
 
 	const stars = normalizeStargazer(stargazerCount);
 
 	return (
 		<div className='card'>
-			<Link to='/' className='card__link'>
+			<Link to={`/info/${id}`} className='card__link'>
 				{name}/{owner.login}
 			</Link>
 			<p className='card__description'>{description}</p>

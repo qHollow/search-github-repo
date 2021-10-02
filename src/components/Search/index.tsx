@@ -7,23 +7,24 @@ type SearchProps = {
 	onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 };
 
-const Search = ({search, setSearch, onSubmit}: SearchProps) => {
+const Search = ({ search, setSearch, onSubmit }: SearchProps) => {
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearch(e.target.value);
 	};
 	return (
-		<form className='search' onSubmit={onSubmit}>
+		<form action="" className='search' onSubmit={onSubmit}>
 			<input
 				type='text'
 				aria-label='Search'
 				placeholder='Search...'
 				className='search__input'
-				name="search"
+				name='search'
 				onChange={onChange}
 				value={search}
-				autoComplete="off"
+				autoComplete='off'
+				id="smthng"
 			/>
-			<button type='submit' className='search__button'>
+			<button type='submit' className='button'>
 				Search
 			</button>
 		</form>

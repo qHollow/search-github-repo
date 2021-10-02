@@ -1,0 +1,29 @@
+query GetCurrentRepository($id: ID!) {
+	node(id: $id) {
+		... on Repository {
+			issues {
+				totalCount
+			}
+			stargazerCount
+			name
+			description
+			owner {
+				login
+			}
+			primaryLanguage {
+				name
+				color
+			}
+			languages(first: 25, orderBy: { field: SIZE, direction: DESC }) {
+				totalCount
+				nodes {
+					color
+					name
+				}
+			}
+			pullRequests {
+				totalCount
+			}
+		}
+	}
+}
