@@ -59,6 +59,7 @@
 }
 
 .card__star {
+  width: 80px;
   font-size: 12px;
 }
 

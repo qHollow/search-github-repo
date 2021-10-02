@@ -4,15 +4,12 @@ import './style.css';
 type SearchProps = {
 	search: string;
 	setSearch: (value: string) => void;
+	onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 };
 
-const Search = ({search, setSearch}: SearchProps) => {
+const Search = ({search, setSearch, onSubmit}: SearchProps) => {
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearch(e.target.value);
-	};
-	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		setSearch('');
 	};
 	return (
 		<form className='search' onSubmit={onSubmit}>

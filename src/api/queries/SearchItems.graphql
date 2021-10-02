@@ -1,0 +1,21 @@
+query SearchItems($query: String!, $cursor: String, $first: Int!) {
+	search(query: $query, type: REPOSITORY, first: $first, after: $cursor) {
+		edges {
+			cursor
+			node {
+				... on Repository {
+					stargazerCount
+					name
+					description
+					owner {
+						login
+					}
+					primaryLanguage {
+						name
+						color
+					}
+				}
+			}
+		}
+	}
+}
