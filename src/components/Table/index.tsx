@@ -12,7 +12,7 @@ const Table = ({ data }: any) => {
 		languages: { nodes },
 	} = data.node;
 	return (
-		<table className="table">
+		<table className='table'>
 			<thead>
 				<tr>
 					<th colSpan={2}>Repository information:</th>
@@ -35,10 +35,10 @@ const Table = ({ data }: any) => {
 					<td>Primary language:</td>
 					<td>
 						<span
-							style={{ backgroundColor: primaryLanguage.color }}
+							style={{ backgroundColor: primaryLanguage?.color }}
 							className='language__color'
 						></span>
-						{primaryLanguage.name}
+						{primaryLanguage?.name}
 					</td>
 				</tr>
 				<tr>
@@ -56,15 +56,16 @@ const Table = ({ data }: any) => {
 				<tr>
 					<td>All used languages: </td>
 					<td>
-						{nodes.map((el: any) => (
-							<div className="language" key={el.name}>
-								<span
-									className='language__color'
-									style={{ backgroundColor: el.color }}
-								></span>
-								{el.name}
-							</div>
-						))}
+						{nodes.length > 0 &&
+							nodes.map((el: any) => (
+								<div className='language' key={el.name}>
+									<span
+										className='language__color'
+										style={{ backgroundColor: el.color }}
+									></span>
+									{el.name}
+								</div>
+							))}
 					</td>
 				</tr>
 			</tbody>
