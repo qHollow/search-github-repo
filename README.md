@@ -1,10 +1,11 @@
 # GitHub search repository  
 ---  
-I`s a simple app for search repositories on GitHub.  
+It`s a simple app for search repositories on GitHub.  
 
 ### Capabilities  
 1. Search reposotories on GitHub  
 1. Two pages. One of them for search, second for give more information.  
+1. Load more repositories.  
 1. View information about the selected repository:  
   - name  
   - owner  

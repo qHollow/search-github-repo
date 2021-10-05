@@ -18,8 +18,6 @@
 .env.test.local
 .env.production.local
 
-.env
-
 apollo.config.js
 
 npm-debug.log*
