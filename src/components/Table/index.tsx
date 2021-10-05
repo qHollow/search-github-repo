@@ -1,16 +1,14 @@
+import { ICurrentItem } from '../../interfaces/currentItem';
 import './style.css';
 
-const Table = ({ data }: any) => {
-	const {
-		issues: { totalCount },
-		stargazerCount,
-		name,
-		primaryLanguage,
-		owner: { login },
-		description,
-		pullRequests: { totalCount: pullRequestsCount },
-		languages: { nodes },
-	} = data.node;
+type Props = {
+	item: ICurrentItem;
+}
+
+const Table = ({item}: Props) => {
+
+	const { description, stargazerCount, owner, primaryLanguage, pullRequests, languages, issues, name} = item.node;
+
 	return (
 		<table className='table'>
 			<thead>
@@ -21,7 +19,7 @@ const Table = ({ data }: any) => {
 			<tbody>
 				<tr>
 					<td>Owner:</td>
-					<td>{login}</td>
+					<td>{owner.login}</td>
 				</tr>
 				<tr>
 					<td>Repository name:</td>
@@ -47,17 +45,17 @@ const Table = ({ data }: any) => {
 				</tr>
 				<tr>
 					<td>Pull request count:</td>
-					<td>{pullRequestsCount}</td>
+					<td>{pullRequests.totalCount}</td>
 				</tr>
 				<tr>
 					<td>Issue count:</td>
-					<td>{totalCount}</td>
+					<td>{issues.totalCount}</td>
 				</tr>
 				<tr>
 					<td>All used languages: </td>
 					<td>
-						{nodes.length > 0 &&
-							nodes.map((el: any) => (
+						{languages?.nodes.length > 0 &&
+							languages.nodes.map((el: any) => (
 								<div className='language' key={el.name}>
 									<span
 										className='language__color'

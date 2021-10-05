@@ -15,7 +15,6 @@ query GetCurrentRepository($id: ID!) {
 				color
 			}
 			languages(first: 25, orderBy: { field: SIZE, direction: DESC }) {
-				totalCount
 				nodes {
 					color
 					name

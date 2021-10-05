@@ -6,18 +6,25 @@ import Loader from '../../components/Loader';
 import Table from '../../components/Table';
 import './style.css';
 
+import { ICurrentItem } from '../../interfaces/currentItem';
+ 
 const GetCurrentRepository = loader(
 	'../../api/queries/GetCurrentRepository.query.graphql'
 );
+
+type ID = {
+  id: string;
+}
 
 const InfoPage = (props: any) => {
 
 	const history = useHistory();
 
-	const { data, loading } = useQuery(GetCurrentRepository, {
+	const { data, loading, error } = useQuery<ICurrentItem, ID>(GetCurrentRepository, {
 		variables: { id: props.match.params.id },
 	});
 
+	if (error) alert(error);
 	return (
 		<div className='info-page'>
 			<Helmet>
@@ -25,7 +32,7 @@ const InfoPage = (props: any) => {
 			</Helmet>
 			<h1 className='visually-hidden'>Information page</h1>
 			<button onClick={history.goBack} className="button">Back</button>
-			{!loading ? <Table data={data} /> : <Loader />}
+			{!loading ? <Table item={data!} /> : <Loader />}
 		</div>
 	);
 };
