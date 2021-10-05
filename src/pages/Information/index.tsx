@@ -9,7 +9,7 @@ import './style.css';
 import { ICurrentItem } from '../../interfaces/currentItem';
  
 const GetCurrentRepository = loader(
-	'../../api/queries/GetCurrentRepository.query.graphql'
+	'../../api/queries/GetCurrentRepository.graphql'
 );
 
 type ID = {
