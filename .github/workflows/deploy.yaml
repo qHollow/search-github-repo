@@ -25,4 +25,4 @@ jobs:
           REACT_APP_GITHUB_TOKEN: "${{ secrets.REACT_APP_GITHUB_TOKEN }}"
           REACT_APP_APOLLO_URI: "https://api.github.com/graphql"
       - run: npm run build
-      - run: cd dist && rsync -e "ssh -i $HOME/.ssh/key -o  StrictHostKeyChecking=no" --archive --compress --delete . qhollow@qhollow.ru:/var/www/github.qhollow.ru/html/
+      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o  StrictHostKeyChecking=no" --archive --compress --delete . qhollow@qhollow.ru:/var/www/github.qhollow.ru/html/
